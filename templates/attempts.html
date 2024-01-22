@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 10 Attempts</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Top 10 Attempts</h1>
+    <ul>
+        {% for attempt in attempts %}
+            <li>User {{ attempt.user_name if attempt.user_name else 'Unknown' }} guessed {{ attempt.guess_number }} at {{ attempt.timestamp }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ url_for('index') }}">Back to Game</a></p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+</body>
+</html>
